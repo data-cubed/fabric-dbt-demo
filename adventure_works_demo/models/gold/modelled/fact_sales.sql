@@ -5,6 +5,7 @@
 ) }}
 
 SELECT
+    sales_order_detail.SalesOrderDetailID,
     sales_order_header.SalesOrderID,
     sales_order_header.SalesOrderNumber,
     sales_order_header.PurchaseOrderNumber,

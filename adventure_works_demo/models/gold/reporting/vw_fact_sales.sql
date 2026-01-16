@@ -1,6 +1,7 @@
 
 
 SELECT
+    fact_sales.SalesOrderDetailID,
     fact_sales.SalesOrderID,
     fact_sales.SalesOrderNumber,
     fact_sales.PurchaseOrderNumber,
