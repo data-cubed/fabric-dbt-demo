@@ -154,12 +154,28 @@ models:
       - name: ShipToAddressID
         data_type: int
       - name: SubTotal
-        data_type: decimal
+        data_type: decimal(19,4)
       - name: TaxAmt
-        data_type: decimal
+        data_type: decimal(19,4)
+        description: "Tax amount for the order"
       - name: TotalDue
-        data_type: decimal
+        data_type: decimal(19,4)
+        description: "Total amount due for the order"
       - name: UnitPrice
-        data_type: decimal
+        data_type: decimal(19,4)
+        description: "Unit price of the product"
       - name: UnitPriceDiscount
-        data_type: decimal
+        description: "Discount applied to the unit price"
+        data_type: decimal(19,4)
+      - name: OrderDate
+        description: "Date the order was placed"
+        data_type: timestamp
+      - name: DueDate
+        description: "Date the order is due"
+        data_type: timestamp
+      - name: ShipDate
+        description: "Date the order was shipped"
+        data_type: timestamp
+      - name: Status
+        description: "Order status"
+        data_type: int
