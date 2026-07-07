@@ -40,15 +40,15 @@ models:
   adventure_works_demo:
     # Config indicated by + and applies to all files under models/example/
     silver:
-      +database: demosuite{{ env_var('ENV_NAME') }}-processed
+      +database: demosuite-processed
       +materialized: table
       +schema: adventure_works_lt
     gold:
       modelled:
-        +database: demosuite{{ env_var('ENV_NAME') }}-modelled
+        +database: demosuite-modelled
         +materialized: table
         +schema: adventure_works_modelled
       reporting:
-        +database: demosuite{{ env_var('ENV_NAME') }}-modelled
+        +database: demosuite-modelled
         +materialized: materialized_view
         +schema: adventure_works_reporting

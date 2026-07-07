@@ -1,27 +1,30 @@
 # Profiles the service principal uses to authenticate with databricks when running dbt
 # Using a profile allows dbt jobs to be ran on standard compute without using a SQL warehouse
 adventure_works_demo:
-  target: "{{ env_var('ENV_NAME') }}"
+  target: dev
   outputs:
     dev:
-      type: databricks
-      # catalog: # if using unity catalog, you have to enter the according catalog here
-      catalog: demosuite{{ env_var('ENV_NAME') }}-raw #optional catalog name if you are using Unity Catalog
-      schema: placeholder
-      host: "{{ env_var('WORKSPACE_URL') }}"
-      http_path: "{{ env_var('HTTP_PATH') }}"
-      auth_type: oauth
-      threads: 8
-      client_id: "{{ env_var('CLIENT_ID') }}"
-      client_secret: "{{ env_var('CLIENT_SECRET') }}"
-    prod:
-      type: databricks
-      # catalog: # if using unity catalog, you have to enter the according catalog here
-      catalog: demosuite{{ env_var('ENV_NAME') }}-raw #optional catalog name if you are using Unity Catalog
-      schema: placeholder
-      host: "{{ env_var('WORKSPACE_URL') }}"
-      http_path: "{{ env_var('HTTP_PATH') }}"
-      auth_type: oauth
-      threads: 8
-      client_id: "{{ env_var('CLIENT_ID') }}"
-      client_secret: "{{ env_var('CLIENT_SECRET') }}"
+      type: fabricspark
+      method: livy
+      endpoint: https://api.fabric.microsoft.com/v1
+      workspaceid: aa623016-b8d7-436e-b4aa-4aa5b99d882c
+      lakehouseid: 775686e9-f69f-408a-9c03-a8a3218a064a
+      lakehouse: Adventureworks
+      schema: dbt
+      threads: 1
+
+      authentication: fabric_notebook
+      livy_mode: fabric
+
+      connect_retries: 1
+      connect_timeout: 10
+      http_timeout: 120
+      session_start_timeout: 600
+      statement_timeout: 3600
+      poll_wait: 10
+      poll_statement_wait: 5
+
+      retry_all: true
+
+      spark_config:
+        name: "dbt_spark_session"
