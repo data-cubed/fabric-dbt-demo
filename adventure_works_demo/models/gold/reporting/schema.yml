@@ -10,8 +10,6 @@ models:
         data_type: int
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
 
   # Dim Product
   - name: vw_dim_product
@@ -21,8 +19,6 @@ models:
         description: "The primary key for the vw_dim_product table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
           
   # Fact Sales
   - name: vw_fact_sales
@@ -32,8 +28,6 @@ models:
         description: "The primary key for the fact_sales table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
       - name: ProductKey
         description: "The foreign key to the vw_dim_product table"
         constraints:

@@ -22,8 +22,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
       - name: ProductSubcategoryKey
         description: "The foreign key to the product subcategory table"
         constraints:
@@ -39,8 +37,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
 
   # Product Category
   - name: product_category
@@ -50,8 +46,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
 
   # Sales Order Detail
   - name: internet_sales
@@ -61,5 +55,3 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-        constraints:
-          - type: primary_key
