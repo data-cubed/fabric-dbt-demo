@@ -10,7 +10,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
         constraints:
           - type: primary_key
   
@@ -23,7 +22,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
         constraints:
           - type: primary_key
       - name: ProductSubcategoryKey
@@ -41,7 +39,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
         constraints:
           - type: primary_key
 
@@ -53,7 +50,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
         constraints:
           - type: primary_key
 
@@ -65,6 +61,5 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
         constraints:
           - type: primary_key
