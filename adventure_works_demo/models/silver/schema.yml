@@ -59,7 +59,7 @@ models:
 
   # Sales Order Detail
   - name: internet_sales
-    description: Sales Order Detail table
+    description: Internet sales table
     columns:
       - name: SalesOrderNumber
         description: "The primary key for this table"

@@ -34,7 +34,7 @@ sources:
 
       # Sales Order Detail
       - name: factinternetsales
-        description: Sales Order Detail table
+        description: Internet Sales table
         columns:
           - name: SalesOrderNumber
             description: primary key
