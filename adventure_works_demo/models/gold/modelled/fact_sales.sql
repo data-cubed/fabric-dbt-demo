@@ -18,4 +18,4 @@ SELECT
     sales_order_detail.ProductKey,
     sales_order_detail.UnitPrice,
     sales_order_detail.UnitPriceDiscountPct,
-FROM {{ ref('sales_order_header') }} sales_order_header
+FROM {{ ref('sales_order_detail') }} sales_order_detail
