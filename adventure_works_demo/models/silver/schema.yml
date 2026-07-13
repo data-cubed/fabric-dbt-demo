@@ -2,11 +2,42 @@
 version: 2
 
 models:
-  # Address
-  - name: address
-    description: "Adress table"
+# Customer
+  - name: customer
+    description: Customer table
     columns:
-      - name: AddressID
+      - name: CustomerKey
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+        constraints:
+          - type: primary_key
+  
+
+  # Product
+  - name: product
+    description: Product table
+    columns:
+      - name: ProductKey
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+        constraints:
+          - type: primary_key
+      - name: ProductSubcategoryKey
+        description: "The foreign key to the product subcategory table"
+        constraints:
+          - type: foreign_key
+            to: ref('product_subcategory')
+            to_columns: [ProductSubcategoryKey]
+  
+  # Product Subategory
+  - name: product_subcategory
+    description: Product Subcategory table
+    columns:
+      - name: ProductSubcategoryKey
         description: "The primary key for this table"
         data_tests:
           - unique
@@ -14,145 +45,23 @@ models:
         constraints:
           - type: primary_key
 
-  # Customer
-  - name: customer
-    description: Customer table
-    columns:
-      - name: CustomerID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-  
-  # Customer Address
-  - name: customer_address
-    description: Customer Address table
-    columns:
-      - name: AddressID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-      - name: CustomerID
-        description: "The foreign key to the customer table"
-        constraints:
-          - type: foreign_key
-            to: ref('customer')
-            to_columns: [CustomerID]
-  
-  # Product
-  - name: product
-    description: Product table
-    columns:
-      - name: ProductID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-      - name: ProductCategoryID
-        description: "The foreign key to the product category table"
-        constraints:
-          - type: foreign_key
-            to: ref('product_category')
-            to_columns: [ProductCategoryID]
-      - name: ProductModelID
-        description: "The foreign key to the product model table"
-        constraints:
-          - type: foreign_key
-            to: ref('product_model')
-            to_columns: [ProductModelID]
-  
   # Product Category
   - name: product_category
     description: Product Category table
     columns:
-      - name: ProductCategoryID
+      - name: ProductCategoryKey
         description: "The primary key for this table"
         data_tests:
           - unique
           - not_null
         constraints:
           - type: primary_key
-  
-  # Product Description
-  - name: product_description
-    description: Product Description table
-    columns:
-      - name: ProductDescriptionID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-  
-  # Product Model
-  - name: product_model
-    description: Product Model table
-    columns:
-      - name: ProductModelID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-  
-  # Product Model Description
-  - name: product_model_product_description
-    description: Product Model Description table
-    columns:
-      - name: u_id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-      - name: ProductModelID
-        description: "The foreign key to the product model table"
-        data_tests:
-          - not_null
-        constraints:
-          - type: foreign_key
-            to: ref('product_model')
-            to_columns: [ProductModelID]
-      - name: ProductDescriptionID
-        description: "The foreign key to the product description table"
-        constraints:
-          - type: foreign_key
-            to: ref('product_description')
-            to_columns: [ProductDescriptionID]
-  
+
   # Sales Order Detail
-  - name: sales_order_detail
+  - name: internet_sales
     description: Sales Order Detail table
     columns:
-      - name: SalesOrderDetailID
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-        constraints:
-          - type: primary_key
-      - name: SalesOrderID
-        description: "The foreign key to the sales order header table"
-        constraints:
-          - type: foreign_key
-            to: ref('sales_order_header')
-            to_columns: [SalesOrderID]
-  
-  # Sales Order Header
-  - name: sales_order_header
-    description: Sales Order Header table
-    columns:
-      - name: SalesOrderID
+      - name: SalesOrderNumber
         description: "The primary key for this table"
         data_tests:
           - unique

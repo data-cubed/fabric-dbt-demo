@@ -5,31 +5,17 @@
 ) }}
 
 SELECT
-    sales_order_detail.SalesOrderDetailID,
-    sales_order_header.SalesOrderID,
-    sales_order_header.SalesOrderNumber,
-    sales_order_header.PurchaseOrderNumber,
-    sales_order_header.CustomerID,
-    sales_order_header.ShipToAddressID,
-    sales_order_header.BillToAddressID,
-    sales_order_header.ShipMethod,
-    sales_order_header.SubTotal,
-    sales_order_header.TaxAmt,
-    sales_order_header.TotalDue,
-    sales_order_header.Comment,
-    sales_order_header.OrderDate,
-    sales_order_header.DueDate,
-    sales_order_header.ShipDate,
-    cast(sales_order_header.Status as int) as Status,
-    sales_order_detail.OrderQty,
-    sales_order_detail.ProductID,
+    sales_order_detail.SalesOrderNumber,
+    sales_order_detail.SalesOrderLineNumber,
+    sales_order_detail.RevisionNumber,
+    sales_order_detail.CustomerKey,
+    sales_order_detail.SalesAmount,
+    sales_order_detail.TaxAmt,
+    sales_order_detail.OrderDate,
+    sales_order_detail.DueDate,
+    sales_order_detail.ShipDate,
+    sales_order_detail.OrderQuantity,
+    sales_order_detail.ProductKey,
     sales_order_detail.UnitPrice,
-    sales_order_detail.UnitPriceDiscount,
-    sales_order_header.ModifiedDate
+    sales_order_detail.UnitPriceDiscountPct,
 FROM {{ ref('sales_order_header') }} sales_order_header
-LEFT JOIN {{ ref('sales_order_detail') }} sales_order_detail
-    ON sales_order_header.SalesOrderID = sales_order_detail.SalesOrderID
-
-{% if is_incremental() %}
-WHERE sales_order_header.ModifiedDate > (SELECT MAX(ModifiedDate) FROM {{ this }})
-{% endif %}

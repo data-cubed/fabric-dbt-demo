@@ -6,4 +6,4 @@
 }}
 
 select *
-from {{ source('adventure_works_bronze', 'salesorderdetail') }}
+from {{ source('adventure_works_bronze', 'factinternetsales') }}

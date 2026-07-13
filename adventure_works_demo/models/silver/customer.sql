@@ -6,4 +6,4 @@
 }}
 
 select *
-from {{ source('adventure_works_bronze', 'customer') }}
+from {{ source('adventure_works_bronze', 'dimcustomer') }}

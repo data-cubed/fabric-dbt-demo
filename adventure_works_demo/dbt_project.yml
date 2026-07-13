@@ -40,15 +40,15 @@ models:
   adventure_works_demo:
     # Config indicated by + and applies to all files under models/example/
     silver:
-      +database: demosuite-processed
+      +database: Adventureworks
       +materialized: table
-      +schema: adventure_works_lt
+      +schema: silver
     gold:
       modelled:
-        +database: demosuite-modelled
+        +database: Adventureworks
         +materialized: table
-        +schema: adventure_works_modelled
+        +schema: gold
       reporting:
-        +database: demosuite-modelled
+        +database: Adventureworks
         +materialized: materialized_view
-        +schema: adventure_works_reporting
+        +schema: dbt

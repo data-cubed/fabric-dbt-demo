@@ -1,75 +1,40 @@
 sources:
   - name: adventure_works_bronze
-    description: Adventure Worrks Source Data
-    database: demosuite{{ env_var('ENV_NAME') }}-raw
-    schema: adventure_works_lt
+    description: Adventure Works Source Data
+    database: Adventureworks
+    schema: bronze
     tables:
-      # Address
-      - name: address
-        description: Address table
-        columns:
-          - name: AddressID
-            description: primary key
-
       # Customer
-      - name: customer
+      - name: dimcustomer
         description: Customer table
         columns:
-          - name: CustomerID
-            description: primary key
-
-      # Customer Address
-      - name: customeraddress
-        description: Customer Address table
-        columns:
-          - name: CustomerID
+          - name: CustomerKey
             description: primary key
 
       # Product
-      - name: product
+      - name: dimproduct
         description: Product table
         columns:
-          - name: ProductID
+          - name: ProductKey
             description: primary key
 
       # Product Category
-      - name: productcategory
+      - name: dimproductcategory
         description: Product Category table
         columns:
-          - name: ProductCategoryID
+          - name: ProductCategoryKey
             description: primary key
 
-      # Product Description
-      - name: productdescription
-        description: Product Description table
+      # Product Subcategory
+      - name: dimproductsubcategory
+        description: Product Subcategory table
         columns:
-          - name: ProductDescriptionID
-            description: primary key
-
-      # Product Model
-      - name: productmodel
-        description: Product Model table
-        columns:
-          - name: ProductModelID
-            description: primary key
-
-      # Product Model Description
-      - name: productmodelproductdescription
-        description: Product Model Description table
-        columns:
-          - name: ProductModelID
+          - name: ProductSubcategoryKey
             description: primary key
 
       # Sales Order Detail
-      - name: salesorderdetail
+      - name: factinternetsales
         description: Sales Order Detail table
         columns:
-          - name: SalesOrderDetailID
-            description: primary key
-
-      # Sales Order Header
-      - name: salesorderheader
-        description: Sales Order Header table
-        columns:
-          - name: SalesOrderID
+          - name: SalesOrderNumber
             description: primary key

@@ -10,7 +10,7 @@ adventure_works_demo:
       workspaceid: aa623016-b8d7-436e-b4aa-4aa5b99d882c
       lakehouseid: 775686e9-f69f-408a-9c03-a8a3218a064a
       lakehouse: Adventureworks
-      schema: dbt
+      schema: bronze
       threads: 1
 
       authentication: fabric_notebook
