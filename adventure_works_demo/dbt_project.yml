@@ -42,12 +42,12 @@ models:
     silver:
       +database: Adventureworks
       +materialized: table
-      +schema: silver
+      +schema: dbtsilver
     gold:
       modelled:
         +database: Adventureworks
         +materialized: table
-        +schema: gold
+        +schema: dbtgold
       reporting:
         +database: Adventureworks
         +materialized: materialized_view

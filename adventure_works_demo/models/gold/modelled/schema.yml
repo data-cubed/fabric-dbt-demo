@@ -17,6 +17,10 @@ models:
         data_type: int
         data_tests:
           - unique
+          - not_null
+        constraints:
+          - type: not_null
+          - type: primary_key
       - name: EmailAddress
         description: "Email address"
         data_type: string
@@ -53,8 +57,11 @@ models:
       - name: ProductKey
         description: "The primary key for the dim_product table"
         data_type: int
-        data_tests:
           - unique
+          - not_null
+        constraints:
+          - type: not_null
+          - type: primary_key
       - name: Color
         data_type: string
       - name: ListPrice
@@ -82,6 +89,10 @@ models:
         data_type: int
         data_tests:
           - unique
+          - not_null
+        constraints:
+          - type: not_null
+          - type: primary_key
       - name: SalesOrderLineNumber
         description: ""
         data_type: int
