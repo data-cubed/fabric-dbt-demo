@@ -10,10 +10,7 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
-        constraints:
-          - type: primary_key
-  
+          - not_null  
 
   # Product
   - name: product
@@ -24,14 +21,8 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: primary_key
       - name: ProductSubcategoryKey
         description: "The foreign key to the product subcategory table"
-        constraints:
-          - type: foreign_key
-            to: ref('product_subcategory')
-            to_columns: [ProductSubcategoryKey]
   
   # Product Subategory
   - name: product_subcategory
@@ -42,8 +33,6 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: primary_key
 
   # Product Category
   - name: product_category
@@ -54,8 +43,6 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: primary_key
 
   # Sales Order Detail
   - name: internet_sales
@@ -66,5 +53,3 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: primary_key

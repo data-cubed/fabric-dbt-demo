@@ -11,9 +11,6 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: not_null
-          - type: primary_key
 
   # Dim Product
   - name: vw_dim_product
@@ -24,9 +21,6 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: not_null
-          - type: primary_key
           
   # Fact Sales
   - name: vw_fact_sales
@@ -37,21 +31,10 @@ models:
         data_tests:
           - unique
           - not_null
-        constraints:
-          - type: not_null
-          - type: primary_key
       - name: ProductKey
         description: "The foreign key to the vw_dim_product table"
-        constraints:
-          - type: foreign_key
-            to: ref('vw_dim_product')
-            to_columns: [ProductID]
       - name: CustomerKey
         description: "The foreign key to the vw_dim_customer table"
-        constraints:
-          - type: foreign_key
-            to: ref('vw_dim_customer')
-            to_columns: [CustomerID]
       - name: OrderDate
         description: "Date the order was placed"
         data_type: timestamp
