@@ -13,7 +13,7 @@ SELECT
     product.ModelName as ProductModelName,
     product.EnglishDescription as ProductDescription,
     product_category.EnglishProductCategoryName as ProductCategoryName,
-    product_subcategory.EnglishProductSubcategoryName as ProductSubcategoryName,
+    product_subcategory.EnglishProductSubcategoryName as ProductSubcategoryName
 FROM {{ ref('product') }} product
 LEFT JOIN product_subcateory
     ON product.ProductSubcategoryKey = product_subcategory.ProductSubcategoryKey

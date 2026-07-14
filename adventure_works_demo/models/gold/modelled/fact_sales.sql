@@ -17,5 +17,5 @@ SELECT
     sales_order_detail.OrderQuantity,
     sales_order_detail.ProductKey,
     sales_order_detail.UnitPrice,
-    sales_order_detail.UnitPriceDiscountPct,
+    sales_order_detail.UnitPriceDiscountPct
 FROM {{ ref('internet_sales') }} sales_order_detail

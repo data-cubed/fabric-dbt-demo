@@ -13,5 +13,5 @@ select
     customer.LastName,
     customer.Suffix,
     customer.EmailAddress,
-    customer.Phone,
+    customer.Phone
 FROM {{ ref('customer') }} customer
