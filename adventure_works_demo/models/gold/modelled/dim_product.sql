@@ -15,7 +15,7 @@ SELECT
     product_category.EnglishProductCategoryName as ProductCategoryName,
     product_subcategory.EnglishProductSubcategoryName as ProductSubcategoryName
 FROM {{ ref('product') }} product
-LEFT JOIN product_subcateory
+LEFT JOIN product_subcategory
     ON product.ProductSubcategoryKey = product_subcategory.ProductSubcategoryKey
 LEFT JOIN product_category
     ON product_subcategory.ProductCategoryKey = product_category.ProductCategoryKey

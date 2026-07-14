@@ -50,5 +50,5 @@ models:
         +schema: dbtgold
       reporting:
         +database: Adventureworks
-        +materialized: materialized_view
+        +materialized: table
         +schema: dbt
