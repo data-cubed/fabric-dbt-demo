@@ -24,7 +24,7 @@ models:
       - name: ProductSubcategoryKey
         description: "The foreign key to the product subcategory table"
   
-  # Product Subategory
+  # Product Subcategory
   - name: product_subcategory
     description: Product Subcategory table
     columns:
