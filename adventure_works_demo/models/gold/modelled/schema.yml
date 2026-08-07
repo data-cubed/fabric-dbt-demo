@@ -116,4 +116,4 @@ models:
         data_type: timestamp
       - name: RevisionNumber
         description: "Version of the line number"
-        data_type: int
+        data_type: short
