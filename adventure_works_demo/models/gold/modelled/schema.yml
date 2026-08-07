@@ -54,6 +54,7 @@ models:
       - name: ProductKey
         description: "The primary key for the dim_product table"
         data_type: int
+        data_tests:
           - unique
           - not_null
       - name: Color
