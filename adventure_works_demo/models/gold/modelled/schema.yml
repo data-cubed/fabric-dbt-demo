@@ -79,14 +79,13 @@ models:
       contract: {enforced: true}
     columns:
       - name: SalesOrderNumber
-        description: "The primary key for the fact_sales table"
-        data_type: int
+        description: "Number for the sales order"
+        data_type: string
         data_tests:
-          - unique
           - not_null
       - name: SalesOrderLineNumber
-        description: ""
-        data_type: int
+        description: "Line number from the sales order"
+        data_type: short
       - name: ProductKey
         description: "The foreign key to the dim_product table"
         data_type: int
@@ -96,16 +95,16 @@ models:
       - name: OrderQuantity
         data_type: smallint
       - name: SalesAmount
-        data_type: decimal(19,4)
+        data_type: decimal(6,2)
       - name: TaxAmt
-        data_type: decimal(19,4)
+        data_type: decimal(5,2)
         description: "Tax amount for the order"
       - name: UnitPrice
-        data_type: decimal(19,4)
+        data_type: decimal(6,2)
         description: "Unit price of the product"
       - name: UnitPriceDiscountPct
         description: "Discount percentage applied to the unit price"
-        data_type: decimal(19,4)
+        data_type: double
       - name: OrderDate
         description: "Date the order was placed"
         data_type: timestamp
@@ -115,3 +114,6 @@ models:
       - name: ShipDate
         description: "Date the order was shipped"
         data_type: timestamp
+      - name: RevisionNumber
+        description: "Version of the line number"
+        data_type: 

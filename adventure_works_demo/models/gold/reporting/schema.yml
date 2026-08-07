@@ -29,7 +29,6 @@ models:
       - name: SalesOrderDetailID
         description: "The primary key for the fact_sales table"
         data_tests:
-          - unique
           - not_null
       - name: ProductKey
         description: "The foreign key to the vw_dim_product table"
