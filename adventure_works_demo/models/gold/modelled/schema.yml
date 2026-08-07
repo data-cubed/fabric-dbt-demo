@@ -60,7 +60,7 @@ models:
       - name: Color
         data_type: string
       - name: ListPrice
-        data_type: decimal
+        data_type: decimal (6,2)
       - name: ProductCategoryName
         data_type: string
       - name: ProductDescription
@@ -70,6 +70,8 @@ models:
       - name: ProductName
         data_type: string
       - name: Size
+        data_type: string
+      - name: ProducModelName
         data_type: string
 
   # Fact Sales
